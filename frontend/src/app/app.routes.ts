@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomePageComponent } from './games/pages/home-page/home-page.component';
 import { GamePageComponent } from './games/pages/game-page/game-page.component';
+import { WishlistPageComponent } from './games/pages/wishlist-page/wishlist-page.component';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,10 @@ export const routes: Routes = [
         redirectTo: 'browse/1',
       },
     ],
+  },
+  {
+    path: 'wishlist',
+    component: WishlistPageComponent
   },
   //   {
   //     path: 'cart',

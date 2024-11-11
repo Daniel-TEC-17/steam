@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of } from 'rxjs';
-import { Category, Game } from '../interfaces/games.interfaces';
+import { Category, Game, Wishlist } from '../interfaces/games.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +15,12 @@ export class GamesService {
     const url = this.apiURL + '/games';
 
     return this.http.get<Game[]>(url).pipe(catchError((err) => of([])));
+  }
+
+  public getWishlist(): Observable<Wishlist[]> {
+    const url = this.apiURL + '/wishlist';
+
+    return this.http.get<Wishlist[]>(url).pipe(catchError((err) => of([])));
   }
 
   public getGameById(id: string): Observable<Game | undefined> {
@@ -33,4 +39,6 @@ export class GamesService {
     const url = this.apiURL + '/categories';
     return this.http.get<Category[]>(url).pipe(catchError((err) => of([])));
   }
+
+
 }

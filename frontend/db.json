@@ -611,5 +611,10 @@
       "id": 16,
       "name": "Platformer"
     }
+  ],
+  "wishlist": [
+    {
+      "id": 1
+    }
   ]
 }
